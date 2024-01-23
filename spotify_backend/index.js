@@ -7,6 +7,7 @@ const JwtStrategy = require("passport-jwt").Strategy,
 const User = require("./models/User.js");
 const authRoutes = require("./routes/auth");
 const songRoutes = require("./routes/song");
+const playlistRoutes = require("./routes/playlist");
 require("dotenv").config();
 const app = express();
 const port = 8080;
@@ -37,17 +38,19 @@ opts.jwtFromRequest = ExtractJwt.fromAuthHeaderAsBearerToken();
 opts.secretOrKey = "KeyPassportJwtIsSecured";
 passport.use(
 	new JwtStrategy(opts, function (jwt_payload, done) {
-		User.findOne({ id: jwt_payload.sub }, function (err, User) {
-			if (err) {
+		User.findOne({ id: jwt_payload.sub })
+			.exec()
+			.then(function (User) {
+				if (User) {
+					return done(null, User);
+				} else {
+					return done(null, false);
+					// or you could create a new account
+				}
+			})
+			.catch(function (err) {
 				return done(err, false);
-			}
-			if (User) {
-				return done(null, User);
-			} else {
-				return done(null, false);
-				// or you could create a new account
-			}
-		});
+			});
 	})
 );
 
@@ -59,8 +62,11 @@ app.get("/", (req, res) => {
 //! Use Auth routes for Authentication...!
 app.use("/auth", authRoutes);
 
-//! Use song routes for create songs...!
+//! Use song routes to create songs...!
 app.use("/song", songRoutes);
+
+//! Use playlist routes to create playlist
+app.use("/playlist", playlistRoutes);
 
 //! we will tell express that our server will run app on localhost:8080 ...!
 app.listen(port, () => {

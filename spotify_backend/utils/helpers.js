@@ -1,7 +1,7 @@
 const jwt = require("jsonwebtoken");
 exports = {};
 
-exports.getToken = async (email, user) => {
+exports.getToken = async (user) => {
 	const token = jwt.sign({ identifier: user._id }, "KeyPassportJwtIsSecured");
 	return token;
 };
