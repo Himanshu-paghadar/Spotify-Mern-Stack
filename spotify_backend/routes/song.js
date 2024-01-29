@@ -15,8 +15,6 @@ router.post(
 				.json({ err: "Insufficient details to create song" });
 		}
 
-		console.log(req.user);
-
 		//* req.user gets the user because of passport.authenticate...!
 		const artist = req.user._id;
 		const songDetails = { name, thumbnail, track, artist };
@@ -38,12 +36,12 @@ router.get(
 
 //! Get route to search for all songs of an Artist...!
 router.get(
-	"/get/artist",
+	"/get/artist/:artistId",
 	passport.authenticate("jwt", { session: false }),
 	async (req, res) => {
-		const { artistId } = req.body;
+		const { artistId } = req.params;
 		//! if artist doesn't exists..!
-		const artist = await User.find({ _id: artistId });
+		const artist = await User.findOne({ _id: artistId });
 		if (!artist) {
 			res.status(301).json({ err: "Artist doesn't exist" });
 		}
@@ -53,13 +51,13 @@ router.get(
 );
 //! Get route to search for a particular single song...!
 router.get(
-	"/get/songname",
+	"/get/songname/:songName",
 	passport.authenticate("jwt", { session: false }),
 	async (req, res) => {
-		const { songName } = req.body;
+		const { songName } = req.params;
 
 		const songs = await Song.find({ name: songName });
-		return res.status(200).json({ data: songs }); 
+		return res.status(200).json({ data: songs });
 	}
 );
 module.exports = router;
