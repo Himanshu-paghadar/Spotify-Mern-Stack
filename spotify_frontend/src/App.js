@@ -2,6 +2,7 @@
 import "./output.css";
 import LoginComponent from "./routes/Login";
 import SignupComponent from "./routes/Signup";
+import HomeComponent from "./routes/Home";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 function App() {
 	return (
@@ -11,13 +12,14 @@ function App() {
 					<Route
 						path="/"
 						element={
-							<div className="bg-spotify1 text-center text-xl hover:text-green-700 ">
+							<div className="bg-spotify1 text-center text-xl hover:text-white ">
 								~:Spotify Music Player:~
 							</div>
 						}
 					/>
 					<Route path="/login" element={<LoginComponent />} />
 					<Route path="/signup" element={<SignupComponent />} />
+					<Route path="/home" element={<HomeComponent />} />
 				</Routes>
 			</BrowserRouter>
 		</div>

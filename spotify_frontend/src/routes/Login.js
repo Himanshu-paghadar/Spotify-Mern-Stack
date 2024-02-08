@@ -8,7 +8,7 @@ const LoginComponent = () => {
 			<div className="logo p-6 border-b-2 border-solid w-full border-gray-300 flex justify-center">
 				<Icon icon="logos:spotify" width="140" />
 			</div>
-			<div className="InputRegion w-1/3 py-8 flex flex-col justify-center items-center">
+			<div className="InputRegion sm:w-2/3 md:w-1/2 lg:w-1/3 xl:w-1/4 py-8 flex flex-col justify-center items-center">
 				<div className="font-bold mb-5">To continue, Login in to Spotify.</div>
 				<TextInput
 					type="text"
@@ -21,7 +21,7 @@ const LoginComponent = () => {
 					placeholder="Enter your password"
 				/>
 				<div className="w-full flex justify-end my-7 ">
-					<button className="bg-spotify1 hover:text-white p-2 px-5 rounded-full font-semibold ">
+					<button className="bg-spotify1 hover:text-white p-2 px-5 rounded-full font-semibold transform transition-transform hover:scale-105">
 						LOG IN
 					</button>
 				</div>
