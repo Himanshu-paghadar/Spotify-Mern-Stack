@@ -9,17 +9,9 @@ function App() {
 		<div className="w-screen h-screen font-poppins">
 			<BrowserRouter>
 				<Routes>
-					<Route
-						path="/"
-						element={
-							<div className="bg-spotify1 text-center text-xl hover:text-white ">
-								~:Spotify Music Player:~
-							</div>
-						}
-					/>
+					<Route path="/" element={<HomeComponent />} />
 					<Route path="/login" element={<LoginComponent />} />
 					<Route path="/signup" element={<SignupComponent />} />
-					<Route path="/home" element={<HomeComponent />} />
 				</Routes>
 			</BrowserRouter>
 		</div>
