@@ -8,9 +8,13 @@ const User = require("./models/User.js");
 const authRoutes = require("./routes/auth");
 const songRoutes = require("./routes/song");
 const playlistRoutes = require("./routes/playlist");
+const cors = require("cors");
 require("dotenv").config();
 const app = express();
 const port = 8080;
+
+//cors is security policy which tells that selective urls can only make request on backend...!
+app.use(cors());
 
 //! Tell Express that body will use JSON format...!
 app.use(express.json());
