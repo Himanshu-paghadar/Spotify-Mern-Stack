@@ -57,6 +57,10 @@ const HomeComponent = () => {
 							displayText={"Search"}
 						/>
 						<Icontext iconName={"f7:music-albums"} displayText={"Library"} />
+						<Icontext
+							iconName={"mingcute:playlist-2-line"}
+							displayText={"My Music"}
+						/>
 					</div>
 					<div className="my-2 bg-appblack rounded-2xl">
 						<Icontext
@@ -98,9 +102,9 @@ const HomeComponent = () => {
 						</div>
 						<div className="w-2/5 flex justify-around h-full items-center">
 							{/* Log in & Sign up Button */}
-							<TextWithHover displayText={"Sign up"} />
-							<div className="LogIn h-2/3 px-7 py-5 bg-white flex justify-center items-center transform transition-transform hover:scale-105  rounded-full font-semibold cursor-pointer">
-								Log in
+							<TextWithHover displayText={"Upload Songs"} />
+							<div className="LogIn h-9 w-10 bg-white flex justify-center items-center transform transition-transform hover:scale-105  rounded-full font-semibold cursor-pointer">
+								HP
 							</div>
 						</div>
 					</div>

@@ -2,7 +2,8 @@ const TextInput = ({
 	type,
 	label,
 	placeholder,
-	className,
+    className,
+    labelClassName,
 	value,
 	setValue,
 }) => {
@@ -10,7 +11,7 @@ const TextInput = ({
 		<div
 			className={`LabelInput flex flex-col space-y-2 w-full my-3 ${className}`}
 		>
-			<label htmlFor={label} className="font-semibold">
+			<label htmlFor={label} className={`font-semibold ${labelClassName}`}>
 				{label}
 			</label>
 			<input
