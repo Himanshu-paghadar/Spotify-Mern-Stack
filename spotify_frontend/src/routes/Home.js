@@ -87,7 +87,7 @@ const HomeComponent = () => {
 				</div>
 			</div>
 			{/* The Right Main Content Panel */}
-			<div className="h-full sm:w-4/5 bg-black py-2 pr-2 overflow-auto">
+			<div className="h-full sm:w-4/5 bg-black py-2 pr-2 overflow-auto ">
 				{/* Navbar section */}
 				<div className="Navbar w-full h-1/10 bg-appblack bg-opacity-40 rounded-tr-2xl rounded-tl-2xl p-2 flex items-center justify-end">
 					<div className="w-1/2 h-full flex ">

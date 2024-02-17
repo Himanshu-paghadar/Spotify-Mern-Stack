@@ -5,8 +5,8 @@ module.exports = {
 		extend: {
 			backgroundColor: {
 				spotify: "#1ED760",
-                spotify1: "#1db954",
-                appblack:"#121212"
+				spotify1: "#1db954",
+				appblack: "#121212",
 			},
 			fontFamily: {
 				poppins: ["Poppins", "sans-serif"],
@@ -14,8 +14,7 @@ module.exports = {
 			height: {
 				"1/10": "10%",
 				"9/10": "90%",
-            },
-            
+			},
 		},
 	},
 	variants: {

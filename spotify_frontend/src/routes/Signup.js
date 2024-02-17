@@ -12,6 +12,7 @@ const SignupComponent = () => {
 	const [password, setPassword] = useState("");
 	const [firstName, setFirstName] = useState("");
 	const [lastName, setLastName] = useState("");
+	// eslint-disable-next-line no-unused-vars
 	const [cookies, setCookies] = useCookies(["token"]);
 	const navigate = useNavigate();
 
@@ -30,10 +31,10 @@ const SignupComponent = () => {
 			const date = new Date();
 			date.setDate(date.getDate() + 30);
 			setCookies("token", token, { path: "/", expires: date });
-			alert("Success");
+			alert("Registration Successfully Done👍🏻");
 			navigate("/login");
 		} else {
-			alert("Fail");
+			alert("Registration Failed, Kindly Try Again🙏🏻");
 		}
 	};
 	return (

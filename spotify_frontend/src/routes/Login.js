@@ -1,8 +1,34 @@
 import { Icon } from "@iconify/react";
 import TextInput from "../components/shared/TextInput";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
+import { useState } from "react";
+import { useCookies } from "react-cookie";
+
+import { makeUnauthenticatedPOSTRequest } from "../utils/serverHelpers";
 
 const LoginComponent = () => {
+	const [email, setEmail] = useState("");
+	const [password, setPassword] = useState("");
+	// eslint-disable-next-line no-unused-vars
+	const [cookies, setCookies] = useCookies(["token"]);
+	const navigate = useNavigate();
+
+	const login = async () => {
+		const data = { email, password };
+		const response = await makeUnauthenticatedPOSTRequest("/auth/login", data);
+
+		if (response && !response.err) {
+			const token = response.token;
+			const date = new Date();
+			date.setDate(date.getDate() + 30);
+			setCookies("token", token, { path: "/", expires: date });
+			alert("Login Successfully Done👍🏻");
+			navigate("/");
+		} else {
+			alert("Login Failed, Kindly Try Again🙏🏻");
+		}
+	};
+
 	return (
 		<div className="w-full h-full flex flex-col items-center ">
 			<div className="logo p-6 border-b-2 border-solid w-full border-gray-300 flex justify-center">
@@ -14,14 +40,24 @@ const LoginComponent = () => {
 					type="text"
 					label="Email address or username"
 					placeholder="Email address or username"
+					value={email}
+					setValue={setEmail}
 				/>
 				<TextInput
 					type="password"
 					label="Enter password"
 					placeholder="Enter your password"
+					value={password}
+					setValue={setPassword}
 				/>
 				<div className="w-full flex justify-end my-7 ">
-					<button className="bg-spotify1 hover:text-white p-2 px-5 rounded-full font-semibold transform transition-transform hover:scale-105">
+					<button
+						className="bg-spotify1 hover:text-white p-2 px-5 rounded-full font-semibold transform transition-transform hover:scale-105"
+						onClick={(e) => {
+							e.preventDefault();
+							login();
+						}}
+					>
 						LOG IN
 					</button>
 				</div>

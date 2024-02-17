@@ -95,7 +95,7 @@ Add the correct text decoration in Chrome, Edge, and Safari.
 
 abbr[title] {
   -webkit-text-decoration: underline dotted;
-          text-decoration: underline dotted;
+  text-decoration: underline dotted;
 }
 
 /**
@@ -10022,22 +10022,22 @@ video {
 
 .select-none {
   -webkit-user-select: none;
-          user-select: none;
+  user-select: none;
 }
 
 .select-text {
   -webkit-user-select: text;
-          user-select: text;
+  user-select: text;
 }
 
 .select-all {
   -webkit-user-select: all;
-          user-select: all;
+  user-select: all;
 }
 
 .select-auto {
   -webkit-user-select: auto;
-          user-select: auto;
+  user-select: auto;
 }
 
 .resize-none {
@@ -10078,7 +10078,7 @@ video {
 
 .appearance-none {
   -webkit-appearance: none;
-          appearance: none;
+  appearance: none;
 }
 
 .auto-cols-auto {
@@ -15696,6 +15696,11 @@ video {
   background-color: rgba(29, 185, 84, var(--tw-bg-opacity));
 }
 
+.bg-appblack {
+  --tw-bg-opacity: 1;
+  background-color: rgba(18, 18, 18, var(--tw-bg-opacity));
+}
+
 .group:hover .group-hover\:bg-transparent {
   background-color: transparent;
 }
@@ -16122,6 +16127,11 @@ video {
 .group:hover .group-hover\:bg-spotify1 {
   --tw-bg-opacity: 1;
   background-color: rgba(29, 185, 84, var(--tw-bg-opacity));
+}
+
+.group:hover .group-hover\:bg-appblack {
+  --tw-bg-opacity: 1;
+  background-color: rgba(18, 18, 18, var(--tw-bg-opacity));
 }
 
 .focus-within\:bg-transparent:focus-within {
@@ -16552,6 +16562,11 @@ video {
   background-color: rgba(29, 185, 84, var(--tw-bg-opacity));
 }
 
+.focus-within\:bg-appblack:focus-within {
+  --tw-bg-opacity: 1;
+  background-color: rgba(18, 18, 18, var(--tw-bg-opacity));
+}
+
 .hover\:bg-transparent:hover {
   background-color: transparent;
 }
@@ -16980,6 +16995,11 @@ video {
   background-color: rgba(29, 185, 84, var(--tw-bg-opacity));
 }
 
+.hover\:bg-appblack:hover {
+  --tw-bg-opacity: 1;
+  background-color: rgba(18, 18, 18, var(--tw-bg-opacity));
+}
+
 .focus\:bg-transparent:focus {
   background-color: transparent;
 }
@@ -17406,6 +17426,11 @@ video {
 .focus\:bg-spotify1:focus {
   --tw-bg-opacity: 1;
   background-color: rgba(29, 185, 84, var(--tw-bg-opacity));
+}
+
+.focus\:bg-appblack:focus {
+  --tw-bg-opacity: 1;
+  background-color: rgba(18, 18, 18, var(--tw-bg-opacity));
 }
 
 .bg-opacity-0 {
@@ -21022,12 +21047,12 @@ video {
 
 .decoration-slice {
   -webkit-box-decoration-break: slice;
-          box-decoration-break: slice;
+  box-decoration-break: slice;
 }
 
 .decoration-clone {
   -webkit-box-decoration-break: clone;
-          box-decoration-break: clone;
+  box-decoration-break: clone;
 }
 
 .bg-auto {
@@ -21068,7 +21093,7 @@ video {
 
 .bg-clip-text {
   -webkit-background-clip: text;
-          background-clip: text;
+  background-clip: text;
 }
 
 .bg-bottom {
@@ -29887,12 +29912,12 @@ video {
   --tw-backdrop-saturate: var(--tw-empty,/*!*/ /*!*/);
   --tw-backdrop-sepia: var(--tw-empty,/*!*/ /*!*/);
   -webkit-backdrop-filter: var(--tw-backdrop-blur) var(--tw-backdrop-brightness) var(--tw-backdrop-contrast) var(--tw-backdrop-grayscale) var(--tw-backdrop-hue-rotate) var(--tw-backdrop-invert) var(--tw-backdrop-opacity) var(--tw-backdrop-saturate) var(--tw-backdrop-sepia);
-          backdrop-filter: var(--tw-backdrop-blur) var(--tw-backdrop-brightness) var(--tw-backdrop-contrast) var(--tw-backdrop-grayscale) var(--tw-backdrop-hue-rotate) var(--tw-backdrop-invert) var(--tw-backdrop-opacity) var(--tw-backdrop-saturate) var(--tw-backdrop-sepia);
+  backdrop-filter: var(--tw-backdrop-blur) var(--tw-backdrop-brightness) var(--tw-backdrop-contrast) var(--tw-backdrop-grayscale) var(--tw-backdrop-hue-rotate) var(--tw-backdrop-invert) var(--tw-backdrop-opacity) var(--tw-backdrop-saturate) var(--tw-backdrop-sepia);
 }
 
 .backdrop-filter-none {
   -webkit-backdrop-filter: none;
-          backdrop-filter: none;
+  backdrop-filter: none;
 }
 
 .backdrop-blur-0 {
@@ -39681,22 +39706,22 @@ video {
 
   .sm\:select-none {
     -webkit-user-select: none;
-            user-select: none;
+    user-select: none;
   }
 
   .sm\:select-text {
     -webkit-user-select: text;
-            user-select: text;
+    user-select: text;
   }
 
   .sm\:select-all {
     -webkit-user-select: all;
-            user-select: all;
+    user-select: all;
   }
 
   .sm\:select-auto {
     -webkit-user-select: auto;
-            user-select: auto;
+    user-select: auto;
   }
 
   .sm\:resize-none {
@@ -39737,7 +39762,7 @@ video {
 
   .sm\:appearance-none {
     -webkit-appearance: none;
-            appearance: none;
+    appearance: none;
   }
 
   .sm\:auto-cols-auto {
@@ -45355,6 +45380,11 @@ video {
     background-color: rgba(29, 185, 84, var(--tw-bg-opacity));
   }
 
+  .sm\:bg-appblack {
+    --tw-bg-opacity: 1;
+    background-color: rgba(18, 18, 18, var(--tw-bg-opacity));
+  }
+
   .group:hover .sm\:group-hover\:bg-transparent {
     background-color: transparent;
   }
@@ -45781,6 +45811,11 @@ video {
   .group:hover .sm\:group-hover\:bg-spotify1 {
     --tw-bg-opacity: 1;
     background-color: rgba(29, 185, 84, var(--tw-bg-opacity));
+  }
+
+  .group:hover .sm\:group-hover\:bg-appblack {
+    --tw-bg-opacity: 1;
+    background-color: rgba(18, 18, 18, var(--tw-bg-opacity));
   }
 
   .sm\:focus-within\:bg-transparent:focus-within {
@@ -46211,6 +46246,11 @@ video {
     background-color: rgba(29, 185, 84, var(--tw-bg-opacity));
   }
 
+  .sm\:focus-within\:bg-appblack:focus-within {
+    --tw-bg-opacity: 1;
+    background-color: rgba(18, 18, 18, var(--tw-bg-opacity));
+  }
+
   .sm\:hover\:bg-transparent:hover {
     background-color: transparent;
   }
@@ -46639,6 +46679,11 @@ video {
     background-color: rgba(29, 185, 84, var(--tw-bg-opacity));
   }
 
+  .sm\:hover\:bg-appblack:hover {
+    --tw-bg-opacity: 1;
+    background-color: rgba(18, 18, 18, var(--tw-bg-opacity));
+  }
+
   .sm\:focus\:bg-transparent:focus {
     background-color: transparent;
   }
@@ -47065,6 +47110,11 @@ video {
   .sm\:focus\:bg-spotify1:focus {
     --tw-bg-opacity: 1;
     background-color: rgba(29, 185, 84, var(--tw-bg-opacity));
+  }
+
+  .sm\:focus\:bg-appblack:focus {
+    --tw-bg-opacity: 1;
+    background-color: rgba(18, 18, 18, var(--tw-bg-opacity));
   }
 
   .sm\:bg-opacity-0 {
@@ -50681,12 +50731,12 @@ video {
 
   .sm\:decoration-slice {
     -webkit-box-decoration-break: slice;
-            box-decoration-break: slice;
+    box-decoration-break: slice;
   }
 
   .sm\:decoration-clone {
     -webkit-box-decoration-break: clone;
-            box-decoration-break: clone;
+    box-decoration-break: clone;
   }
 
   .sm\:bg-auto {
@@ -50727,7 +50777,7 @@ video {
 
   .sm\:bg-clip-text {
     -webkit-background-clip: text;
-            background-clip: text;
+    background-clip: text;
   }
 
   .sm\:bg-bottom {
@@ -59197,12 +59247,12 @@ video {
     --tw-backdrop-saturate: var(--tw-empty,/*!*/ /*!*/);
     --tw-backdrop-sepia: var(--tw-empty,/*!*/ /*!*/);
     -webkit-backdrop-filter: var(--tw-backdrop-blur) var(--tw-backdrop-brightness) var(--tw-backdrop-contrast) var(--tw-backdrop-grayscale) var(--tw-backdrop-hue-rotate) var(--tw-backdrop-invert) var(--tw-backdrop-opacity) var(--tw-backdrop-saturate) var(--tw-backdrop-sepia);
-            backdrop-filter: var(--tw-backdrop-blur) var(--tw-backdrop-brightness) var(--tw-backdrop-contrast) var(--tw-backdrop-grayscale) var(--tw-backdrop-hue-rotate) var(--tw-backdrop-invert) var(--tw-backdrop-opacity) var(--tw-backdrop-saturate) var(--tw-backdrop-sepia);
+    backdrop-filter: var(--tw-backdrop-blur) var(--tw-backdrop-brightness) var(--tw-backdrop-contrast) var(--tw-backdrop-grayscale) var(--tw-backdrop-hue-rotate) var(--tw-backdrop-invert) var(--tw-backdrop-opacity) var(--tw-backdrop-saturate) var(--tw-backdrop-sepia);
   }
 
   .sm\:backdrop-filter-none {
     -webkit-backdrop-filter: none;
-            backdrop-filter: none;
+    backdrop-filter: none;
   }
 
   .sm\:backdrop-blur-0 {
@@ -68988,22 +69038,22 @@ video {
 
   .md\:select-none {
     -webkit-user-select: none;
-            user-select: none;
+    user-select: none;
   }
 
   .md\:select-text {
     -webkit-user-select: text;
-            user-select: text;
+    user-select: text;
   }
 
   .md\:select-all {
     -webkit-user-select: all;
-            user-select: all;
+    user-select: all;
   }
 
   .md\:select-auto {
     -webkit-user-select: auto;
-            user-select: auto;
+    user-select: auto;
   }
 
   .md\:resize-none {
@@ -69044,7 +69094,7 @@ video {
 
   .md\:appearance-none {
     -webkit-appearance: none;
-            appearance: none;
+    appearance: none;
   }
 
   .md\:auto-cols-auto {
@@ -74662,6 +74712,11 @@ video {
     background-color: rgba(29, 185, 84, var(--tw-bg-opacity));
   }
 
+  .md\:bg-appblack {
+    --tw-bg-opacity: 1;
+    background-color: rgba(18, 18, 18, var(--tw-bg-opacity));
+  }
+
   .group:hover .md\:group-hover\:bg-transparent {
     background-color: transparent;
   }
@@ -75088,6 +75143,11 @@ video {
   .group:hover .md\:group-hover\:bg-spotify1 {
     --tw-bg-opacity: 1;
     background-color: rgba(29, 185, 84, var(--tw-bg-opacity));
+  }
+
+  .group:hover .md\:group-hover\:bg-appblack {
+    --tw-bg-opacity: 1;
+    background-color: rgba(18, 18, 18, var(--tw-bg-opacity));
   }
 
   .md\:focus-within\:bg-transparent:focus-within {
@@ -75518,6 +75578,11 @@ video {
     background-color: rgba(29, 185, 84, var(--tw-bg-opacity));
   }
 
+  .md\:focus-within\:bg-appblack:focus-within {
+    --tw-bg-opacity: 1;
+    background-color: rgba(18, 18, 18, var(--tw-bg-opacity));
+  }
+
   .md\:hover\:bg-transparent:hover {
     background-color: transparent;
   }
@@ -75946,6 +76011,11 @@ video {
     background-color: rgba(29, 185, 84, var(--tw-bg-opacity));
   }
 
+  .md\:hover\:bg-appblack:hover {
+    --tw-bg-opacity: 1;
+    background-color: rgba(18, 18, 18, var(--tw-bg-opacity));
+  }
+
   .md\:focus\:bg-transparent:focus {
     background-color: transparent;
   }
@@ -76372,6 +76442,11 @@ video {
   .md\:focus\:bg-spotify1:focus {
     --tw-bg-opacity: 1;
     background-color: rgba(29, 185, 84, var(--tw-bg-opacity));
+  }
+
+  .md\:focus\:bg-appblack:focus {
+    --tw-bg-opacity: 1;
+    background-color: rgba(18, 18, 18, var(--tw-bg-opacity));
   }
 
   .md\:bg-opacity-0 {
@@ -79988,12 +80063,12 @@ video {
 
   .md\:decoration-slice {
     -webkit-box-decoration-break: slice;
-            box-decoration-break: slice;
+    box-decoration-break: slice;
   }
 
   .md\:decoration-clone {
     -webkit-box-decoration-break: clone;
-            box-decoration-break: clone;
+    box-decoration-break: clone;
   }
 
   .md\:bg-auto {
@@ -80034,7 +80109,7 @@ video {
 
   .md\:bg-clip-text {
     -webkit-background-clip: text;
-            background-clip: text;
+    background-clip: text;
   }
 
   .md\:bg-bottom {
@@ -88504,12 +88579,12 @@ video {
     --tw-backdrop-saturate: var(--tw-empty,/*!*/ /*!*/);
     --tw-backdrop-sepia: var(--tw-empty,/*!*/ /*!*/);
     -webkit-backdrop-filter: var(--tw-backdrop-blur) var(--tw-backdrop-brightness) var(--tw-backdrop-contrast) var(--tw-backdrop-grayscale) var(--tw-backdrop-hue-rotate) var(--tw-backdrop-invert) var(--tw-backdrop-opacity) var(--tw-backdrop-saturate) var(--tw-backdrop-sepia);
-            backdrop-filter: var(--tw-backdrop-blur) var(--tw-backdrop-brightness) var(--tw-backdrop-contrast) var(--tw-backdrop-grayscale) var(--tw-backdrop-hue-rotate) var(--tw-backdrop-invert) var(--tw-backdrop-opacity) var(--tw-backdrop-saturate) var(--tw-backdrop-sepia);
+    backdrop-filter: var(--tw-backdrop-blur) var(--tw-backdrop-brightness) var(--tw-backdrop-contrast) var(--tw-backdrop-grayscale) var(--tw-backdrop-hue-rotate) var(--tw-backdrop-invert) var(--tw-backdrop-opacity) var(--tw-backdrop-saturate) var(--tw-backdrop-sepia);
   }
 
   .md\:backdrop-filter-none {
     -webkit-backdrop-filter: none;
-            backdrop-filter: none;
+    backdrop-filter: none;
   }
 
   .md\:backdrop-blur-0 {
@@ -98295,22 +98370,22 @@ video {
 
   .lg\:select-none {
     -webkit-user-select: none;
-            user-select: none;
+    user-select: none;
   }
 
   .lg\:select-text {
     -webkit-user-select: text;
-            user-select: text;
+    user-select: text;
   }
 
   .lg\:select-all {
     -webkit-user-select: all;
-            user-select: all;
+    user-select: all;
   }
 
   .lg\:select-auto {
     -webkit-user-select: auto;
-            user-select: auto;
+    user-select: auto;
   }
 
   .lg\:resize-none {
@@ -98351,7 +98426,7 @@ video {
 
   .lg\:appearance-none {
     -webkit-appearance: none;
-            appearance: none;
+    appearance: none;
   }
 
   .lg\:auto-cols-auto {
@@ -103969,6 +104044,11 @@ video {
     background-color: rgba(29, 185, 84, var(--tw-bg-opacity));
   }
 
+  .lg\:bg-appblack {
+    --tw-bg-opacity: 1;
+    background-color: rgba(18, 18, 18, var(--tw-bg-opacity));
+  }
+
   .group:hover .lg\:group-hover\:bg-transparent {
     background-color: transparent;
   }
@@ -104395,6 +104475,11 @@ video {
   .group:hover .lg\:group-hover\:bg-spotify1 {
     --tw-bg-opacity: 1;
     background-color: rgba(29, 185, 84, var(--tw-bg-opacity));
+  }
+
+  .group:hover .lg\:group-hover\:bg-appblack {
+    --tw-bg-opacity: 1;
+    background-color: rgba(18, 18, 18, var(--tw-bg-opacity));
   }
 
   .lg\:focus-within\:bg-transparent:focus-within {
@@ -104825,6 +104910,11 @@ video {
     background-color: rgba(29, 185, 84, var(--tw-bg-opacity));
   }
 
+  .lg\:focus-within\:bg-appblack:focus-within {
+    --tw-bg-opacity: 1;
+    background-color: rgba(18, 18, 18, var(--tw-bg-opacity));
+  }
+
   .lg\:hover\:bg-transparent:hover {
     background-color: transparent;
   }
@@ -105253,6 +105343,11 @@ video {
     background-color: rgba(29, 185, 84, var(--tw-bg-opacity));
   }
 
+  .lg\:hover\:bg-appblack:hover {
+    --tw-bg-opacity: 1;
+    background-color: rgba(18, 18, 18, var(--tw-bg-opacity));
+  }
+
   .lg\:focus\:bg-transparent:focus {
     background-color: transparent;
   }
@@ -105679,6 +105774,11 @@ video {
   .lg\:focus\:bg-spotify1:focus {
     --tw-bg-opacity: 1;
     background-color: rgba(29, 185, 84, var(--tw-bg-opacity));
+  }
+
+  .lg\:focus\:bg-appblack:focus {
+    --tw-bg-opacity: 1;
+    background-color: rgba(18, 18, 18, var(--tw-bg-opacity));
   }
 
   .lg\:bg-opacity-0 {
@@ -109295,12 +109395,12 @@ video {
 
   .lg\:decoration-slice {
     -webkit-box-decoration-break: slice;
-            box-decoration-break: slice;
+    box-decoration-break: slice;
   }
 
   .lg\:decoration-clone {
     -webkit-box-decoration-break: clone;
-            box-decoration-break: clone;
+    box-decoration-break: clone;
   }
 
   .lg\:bg-auto {
@@ -109341,7 +109441,7 @@ video {
 
   .lg\:bg-clip-text {
     -webkit-background-clip: text;
-            background-clip: text;
+    background-clip: text;
   }
 
   .lg\:bg-bottom {
@@ -117811,12 +117911,12 @@ video {
     --tw-backdrop-saturate: var(--tw-empty,/*!*/ /*!*/);
     --tw-backdrop-sepia: var(--tw-empty,/*!*/ /*!*/);
     -webkit-backdrop-filter: var(--tw-backdrop-blur) var(--tw-backdrop-brightness) var(--tw-backdrop-contrast) var(--tw-backdrop-grayscale) var(--tw-backdrop-hue-rotate) var(--tw-backdrop-invert) var(--tw-backdrop-opacity) var(--tw-backdrop-saturate) var(--tw-backdrop-sepia);
-            backdrop-filter: var(--tw-backdrop-blur) var(--tw-backdrop-brightness) var(--tw-backdrop-contrast) var(--tw-backdrop-grayscale) var(--tw-backdrop-hue-rotate) var(--tw-backdrop-invert) var(--tw-backdrop-opacity) var(--tw-backdrop-saturate) var(--tw-backdrop-sepia);
+    backdrop-filter: var(--tw-backdrop-blur) var(--tw-backdrop-brightness) var(--tw-backdrop-contrast) var(--tw-backdrop-grayscale) var(--tw-backdrop-hue-rotate) var(--tw-backdrop-invert) var(--tw-backdrop-opacity) var(--tw-backdrop-saturate) var(--tw-backdrop-sepia);
   }
 
   .lg\:backdrop-filter-none {
     -webkit-backdrop-filter: none;
-            backdrop-filter: none;
+    backdrop-filter: none;
   }
 
   .lg\:backdrop-blur-0 {
@@ -127602,22 +127702,22 @@ video {
 
   .xl\:select-none {
     -webkit-user-select: none;
-            user-select: none;
+    user-select: none;
   }
 
   .xl\:select-text {
     -webkit-user-select: text;
-            user-select: text;
+    user-select: text;
   }
 
   .xl\:select-all {
     -webkit-user-select: all;
-            user-select: all;
+    user-select: all;
   }
 
   .xl\:select-auto {
     -webkit-user-select: auto;
-            user-select: auto;
+    user-select: auto;
   }
 
   .xl\:resize-none {
@@ -127658,7 +127758,7 @@ video {
 
   .xl\:appearance-none {
     -webkit-appearance: none;
-            appearance: none;
+    appearance: none;
   }
 
   .xl\:auto-cols-auto {
@@ -133276,6 +133376,11 @@ video {
     background-color: rgba(29, 185, 84, var(--tw-bg-opacity));
   }
 
+  .xl\:bg-appblack {
+    --tw-bg-opacity: 1;
+    background-color: rgba(18, 18, 18, var(--tw-bg-opacity));
+  }
+
   .group:hover .xl\:group-hover\:bg-transparent {
     background-color: transparent;
   }
@@ -133702,6 +133807,11 @@ video {
   .group:hover .xl\:group-hover\:bg-spotify1 {
     --tw-bg-opacity: 1;
     background-color: rgba(29, 185, 84, var(--tw-bg-opacity));
+  }
+
+  .group:hover .xl\:group-hover\:bg-appblack {
+    --tw-bg-opacity: 1;
+    background-color: rgba(18, 18, 18, var(--tw-bg-opacity));
   }
 
   .xl\:focus-within\:bg-transparent:focus-within {
@@ -134132,6 +134242,11 @@ video {
     background-color: rgba(29, 185, 84, var(--tw-bg-opacity));
   }
 
+  .xl\:focus-within\:bg-appblack:focus-within {
+    --tw-bg-opacity: 1;
+    background-color: rgba(18, 18, 18, var(--tw-bg-opacity));
+  }
+
   .xl\:hover\:bg-transparent:hover {
     background-color: transparent;
   }
@@ -134560,6 +134675,11 @@ video {
     background-color: rgba(29, 185, 84, var(--tw-bg-opacity));
   }
 
+  .xl\:hover\:bg-appblack:hover {
+    --tw-bg-opacity: 1;
+    background-color: rgba(18, 18, 18, var(--tw-bg-opacity));
+  }
+
   .xl\:focus\:bg-transparent:focus {
     background-color: transparent;
   }
@@ -134986,6 +135106,11 @@ video {
   .xl\:focus\:bg-spotify1:focus {
     --tw-bg-opacity: 1;
     background-color: rgba(29, 185, 84, var(--tw-bg-opacity));
+  }
+
+  .xl\:focus\:bg-appblack:focus {
+    --tw-bg-opacity: 1;
+    background-color: rgba(18, 18, 18, var(--tw-bg-opacity));
   }
 
   .xl\:bg-opacity-0 {
@@ -138602,12 +138727,12 @@ video {
 
   .xl\:decoration-slice {
     -webkit-box-decoration-break: slice;
-            box-decoration-break: slice;
+    box-decoration-break: slice;
   }
 
   .xl\:decoration-clone {
     -webkit-box-decoration-break: clone;
-            box-decoration-break: clone;
+    box-decoration-break: clone;
   }
 
   .xl\:bg-auto {
@@ -138648,7 +138773,7 @@ video {
 
   .xl\:bg-clip-text {
     -webkit-background-clip: text;
-            background-clip: text;
+    background-clip: text;
   }
 
   .xl\:bg-bottom {
@@ -147118,12 +147243,12 @@ video {
     --tw-backdrop-saturate: var(--tw-empty,/*!*/ /*!*/);
     --tw-backdrop-sepia: var(--tw-empty,/*!*/ /*!*/);
     -webkit-backdrop-filter: var(--tw-backdrop-blur) var(--tw-backdrop-brightness) var(--tw-backdrop-contrast) var(--tw-backdrop-grayscale) var(--tw-backdrop-hue-rotate) var(--tw-backdrop-invert) var(--tw-backdrop-opacity) var(--tw-backdrop-saturate) var(--tw-backdrop-sepia);
-            backdrop-filter: var(--tw-backdrop-blur) var(--tw-backdrop-brightness) var(--tw-backdrop-contrast) var(--tw-backdrop-grayscale) var(--tw-backdrop-hue-rotate) var(--tw-backdrop-invert) var(--tw-backdrop-opacity) var(--tw-backdrop-saturate) var(--tw-backdrop-sepia);
+    backdrop-filter: var(--tw-backdrop-blur) var(--tw-backdrop-brightness) var(--tw-backdrop-contrast) var(--tw-backdrop-grayscale) var(--tw-backdrop-hue-rotate) var(--tw-backdrop-invert) var(--tw-backdrop-opacity) var(--tw-backdrop-saturate) var(--tw-backdrop-sepia);
   }
 
   .xl\:backdrop-filter-none {
     -webkit-backdrop-filter: none;
-            backdrop-filter: none;
+    backdrop-filter: none;
   }
 
   .xl\:backdrop-blur-0 {
@@ -156909,22 +157034,22 @@ video {
 
   .\32xl\:select-none {
     -webkit-user-select: none;
-            user-select: none;
+    user-select: none;
   }
 
   .\32xl\:select-text {
     -webkit-user-select: text;
-            user-select: text;
+    user-select: text;
   }
 
   .\32xl\:select-all {
     -webkit-user-select: all;
-            user-select: all;
+    user-select: all;
   }
 
   .\32xl\:select-auto {
     -webkit-user-select: auto;
-            user-select: auto;
+    user-select: auto;
   }
 
   .\32xl\:resize-none {
@@ -156965,7 +157090,7 @@ video {
 
   .\32xl\:appearance-none {
     -webkit-appearance: none;
-            appearance: none;
+    appearance: none;
   }
 
   .\32xl\:auto-cols-auto {
@@ -162583,6 +162708,11 @@ video {
     background-color: rgba(29, 185, 84, var(--tw-bg-opacity));
   }
 
+  .\32xl\:bg-appblack {
+    --tw-bg-opacity: 1;
+    background-color: rgba(18, 18, 18, var(--tw-bg-opacity));
+  }
+
   .group:hover .\32xl\:group-hover\:bg-transparent {
     background-color: transparent;
   }
@@ -163009,6 +163139,11 @@ video {
   .group:hover .\32xl\:group-hover\:bg-spotify1 {
     --tw-bg-opacity: 1;
     background-color: rgba(29, 185, 84, var(--tw-bg-opacity));
+  }
+
+  .group:hover .\32xl\:group-hover\:bg-appblack {
+    --tw-bg-opacity: 1;
+    background-color: rgba(18, 18, 18, var(--tw-bg-opacity));
   }
 
   .\32xl\:focus-within\:bg-transparent:focus-within {
@@ -163439,6 +163574,11 @@ video {
     background-color: rgba(29, 185, 84, var(--tw-bg-opacity));
   }
 
+  .\32xl\:focus-within\:bg-appblack:focus-within {
+    --tw-bg-opacity: 1;
+    background-color: rgba(18, 18, 18, var(--tw-bg-opacity));
+  }
+
   .\32xl\:hover\:bg-transparent:hover {
     background-color: transparent;
   }
@@ -163867,6 +164007,11 @@ video {
     background-color: rgba(29, 185, 84, var(--tw-bg-opacity));
   }
 
+  .\32xl\:hover\:bg-appblack:hover {
+    --tw-bg-opacity: 1;
+    background-color: rgba(18, 18, 18, var(--tw-bg-opacity));
+  }
+
   .\32xl\:focus\:bg-transparent:focus {
     background-color: transparent;
   }
@@ -164293,6 +164438,11 @@ video {
   .\32xl\:focus\:bg-spotify1:focus {
     --tw-bg-opacity: 1;
     background-color: rgba(29, 185, 84, var(--tw-bg-opacity));
+  }
+
+  .\32xl\:focus\:bg-appblack:focus {
+    --tw-bg-opacity: 1;
+    background-color: rgba(18, 18, 18, var(--tw-bg-opacity));
   }
 
   .\32xl\:bg-opacity-0 {
@@ -167909,12 +168059,12 @@ video {
 
   .\32xl\:decoration-slice {
     -webkit-box-decoration-break: slice;
-            box-decoration-break: slice;
+    box-decoration-break: slice;
   }
 
   .\32xl\:decoration-clone {
     -webkit-box-decoration-break: clone;
-            box-decoration-break: clone;
+    box-decoration-break: clone;
   }
 
   .\32xl\:bg-auto {
@@ -167955,7 +168105,7 @@ video {
 
   .\32xl\:bg-clip-text {
     -webkit-background-clip: text;
-            background-clip: text;
+    background-clip: text;
   }
 
   .\32xl\:bg-bottom {
@@ -176425,12 +176575,12 @@ video {
     --tw-backdrop-saturate: var(--tw-empty,/*!*/ /*!*/);
     --tw-backdrop-sepia: var(--tw-empty,/*!*/ /*!*/);
     -webkit-backdrop-filter: var(--tw-backdrop-blur) var(--tw-backdrop-brightness) var(--tw-backdrop-contrast) var(--tw-backdrop-grayscale) var(--tw-backdrop-hue-rotate) var(--tw-backdrop-invert) var(--tw-backdrop-opacity) var(--tw-backdrop-saturate) var(--tw-backdrop-sepia);
-            backdrop-filter: var(--tw-backdrop-blur) var(--tw-backdrop-brightness) var(--tw-backdrop-contrast) var(--tw-backdrop-grayscale) var(--tw-backdrop-hue-rotate) var(--tw-backdrop-invert) var(--tw-backdrop-opacity) var(--tw-backdrop-saturate) var(--tw-backdrop-sepia);
+    backdrop-filter: var(--tw-backdrop-blur) var(--tw-backdrop-brightness) var(--tw-backdrop-contrast) var(--tw-backdrop-grayscale) var(--tw-backdrop-hue-rotate) var(--tw-backdrop-invert) var(--tw-backdrop-opacity) var(--tw-backdrop-saturate) var(--tw-backdrop-sepia);
   }
 
   .\32xl\:backdrop-filter-none {
     -webkit-backdrop-filter: none;
-            backdrop-filter: none;
+    backdrop-filter: none;
   }
 
   .\32xl\:backdrop-blur-0 {
