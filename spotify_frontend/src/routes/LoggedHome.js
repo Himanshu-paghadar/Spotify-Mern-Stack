@@ -2,6 +2,7 @@ import spotify_logo from "../assets/images/spotify_logo_white.svg";
 import Icontext from "../components/shared/IconText";
 import { Icon } from "@iconify/react";
 import TextWithHover from "../components/shared/TextWithHover";
+import { Link } from "react-router-dom";
 
 const playlistsCard = [
 	{
@@ -102,7 +103,9 @@ const HomeComponent = () => {
 						</div>
 						<div className="w-2/5 flex justify-around h-full items-center">
 							{/* Log in & Sign up Button */}
-							<TextWithHover displayText={"Upload Songs"} />
+							<Link to={"/UploadSong"}>
+								<TextWithHover displayText={"Upload Songs"} />
+							</Link>
 							<div className="LogIn h-9 w-10 bg-white flex justify-center items-center transform transition-transform hover:scale-105  rounded-full font-semibold cursor-pointer">
 								HP
 							</div>
