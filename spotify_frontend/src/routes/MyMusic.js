@@ -2,30 +2,21 @@ import spotify_logo from "../assets/images/spotify_logo_white.svg";
 import Icontext from "../components/shared/IconText";
 import { Icon } from "@iconify/react";
 import TextWithHover from "../components/shared/TextWithHover";
-import TextInput from "../components/shared/TextInput";
-import CloudinaryUpload from "../components/shared/CloudinaryUpload";
-import { useState } from "react";
-import { makeAuthenticatedPOSTRequest } from "../utils/serverHelpers";
-import { useNavigate } from "react-router-dom";
+import SingleSongCard from "../components/shared/SingleSongCard";
+import { makeAuthenticatedGETRequest } from "../utils/serverHelpers";
+import { useEffect, useState } from "react";
 
-const UploadSong = () => {
-	const [name, setName] = useState("");
-	const [thumbnail, setThumnail] = useState("");
-	const [playlistUrl, setPlaylistUrl] = useState("");
-	const [uploadedSongFileName, setUploadedSongFileName] = useState();
-	const navigate = useNavigate();
-
-	const submitSong = async () => {
-		const data = { name, thumbnail, track: playlistUrl };
-		const response = await makeAuthenticatedPOSTRequest("/song/create", data);
-		console.log(response);
-		if (response) {
-			alert("Song has been uploaded...");
-			navigate("/myMusic");
-		} else {
-			alert("Something went wrong, Kindly uplaod your track again...");
-		}
-	};
+const MyMusic = () => {
+	const [songData, setSongData] = useState([]);
+	useEffect(() => {
+		// Fetching Songs...
+		const getData = async () => {
+			const response = await makeAuthenticatedGETRequest("/song/get/mysongs");
+			console.log(response);
+			setSongData(response.data);
+		};
+		getData();
+	}, []);
 
 	return (
 		<div className="w-full h-full flex">
@@ -37,11 +28,7 @@ const UploadSong = () => {
 						<img src={spotify_logo} alt="Spotify Logo" width={130} />
 					</div>
 					<div className="MenuItems bg-appblack rounded-2xl ">
-						<Icontext
-							iconName={"mingcute:home-4-fill"}
-							displayText={"Home"}
-							active
-						/>
+						<Icontext iconName={"mingcute:home-4-fill"} displayText={"Home"} />
 						<Icontext
 							iconName={"majesticons:search-line"}
 							displayText={"Search"}
@@ -50,6 +37,7 @@ const UploadSong = () => {
 						<Icontext
 							iconName={"mingcute:playlist-2-line"}
 							displayText={"My Music"}
+							active
 						/>
 					</div>
 					<div className="my-2 bg-appblack rounded-2xl">
@@ -92,7 +80,7 @@ const UploadSong = () => {
 						</div>
 						<div className="w-2/5 flex justify-around h-full items-center">
 							{/* Logged in user & Upload Songs Button */}
-							<TextWithHover displayText={"Upload Songs"} active />
+							<TextWithHover displayText={"Upload Songs"} />
 							<div className="LogIn h-9 w-9 bg-white flex justify-center items-center transform transition-transform hover:scale-105  rounded-full font-semibold cursor-pointer">
 								HP
 							</div>
@@ -101,59 +89,15 @@ const UploadSong = () => {
 				</div>
 				{/* Main Content Section under navbar region */}
 				<div className="Content w-full h-9/10 bg-appblack rounded-br-2xl rounded-bl-2xl p-4 overflow-auto">
-					<div className="my-4 font-semibold text-2xl text-white hover:underline">
-						Upload Your Music
+					<div className="text-white pb-2 font-semibold text-2xl cursor-pointer hover:underline">
+						My Songs
 					</div>
-					<div className="w-full flex space-x-4">
-						<div className="w-1/3">
-							<TextInput
-								label="Song Name"
-								placeholder="Title"
-								labelClassName="text-white"
-								value={name}
-								setValue={setName}
-							/>
-						</div>
-						<div className="w-1/3">
-							<TextInput
-								label="Thumbnail"
-								placeholder="Thumbnail"
-								labelClassName="text-white"
-								value={thumbnail}
-								setValue={setThumnail}
-							/>
-						</div>
-					</div>
-					{/* Select Track Button */}
-					<div className="py-3">
-						{uploadedSongFileName ? (
-							<>
-								<div className="bg-white rounded-full p-3 w-1/3 mb-3">
-									{uploadedSongFileName.substring(0, 30)}...
-								</div>
-								{/* Submit Song Button If track is Uploaded... */}
-								<div className="w-36 bg-white text-black hover:text-white p-4 font-semibold rounded-full border border-gray-500 py-3 hover:bg-spotify1 transform transition-transform hover:scale-105 cursor-pointer">
-									<button
-										onClick={(e) => {
-											e.preventDefault();
-											submitSong();
-										}}
-									>
-										Submit Song
-									</button>
-								</div>
-							</>
-						) : (
-							<CloudinaryUpload
-								setUrl={setPlaylistUrl}
-								setName={setUploadedSongFileName}
-							/>
-						)}
-					</div>
+					{songData.map((item) => {
+						return <SingleSongCard info={item} />;
+					})}
 				</div>
 			</div>
 		</div>
 	);
 };
-
-export default UploadSong;
+export default MyMusic;
