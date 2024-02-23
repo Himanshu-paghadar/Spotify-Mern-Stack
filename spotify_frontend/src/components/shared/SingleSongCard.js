@@ -1,6 +1,11 @@
-const SingleSongCard = ({ info }) => {
+const SingleSongCard = ({ info, playSound }) => {
 	return (
-		<div className="flex hover:bg-gray-400 hover:bg-opacity-20 p-2 rounded-md">
+		<div
+			className="flex hover:bg-gray-400 hover:bg-opacity-20 p-2 rounded-md"
+			onClick={() => {
+				playSound(info.track);
+			}}
+		>
 			{/* Song Card-Image */}
 			<div
 				className="cardImage w-10 h-10 bg-center bg-cover rounded-md"

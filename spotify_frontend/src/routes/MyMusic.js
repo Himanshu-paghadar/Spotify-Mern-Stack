@@ -5,14 +5,30 @@ import TextWithHover from "../components/shared/TextWithHover";
 import SingleSongCard from "../components/shared/SingleSongCard";
 import { makeAuthenticatedGETRequest } from "../utils/serverHelpers";
 import { useEffect, useState } from "react";
+// eslint-disable-next-line no-unused-vars
+import { Howl, Howler } from "howler";
 
 const MyMusic = () => {
 	const [songData, setSongData] = useState([]);
+	const [soundPlayed, setSoundPlayed] = useState(null);
+
+	const playSound = (songSrc) => {
+		if (soundPlayed) {
+			soundPlayed.stop();
+		}
+		let sound = new Howl({
+			src: [songSrc],
+			html5: true,
+		});
+		setSoundPlayed(sound);
+		sound.play();
+	};
+
+	// Fetching Uploaded Songs of user...
 	useEffect(() => {
-		// Fetching Songs...
 		const getData = async () => {
 			const response = await makeAuthenticatedGETRequest("/song/get/mysongs");
-			console.log(response);
+			// console.log(response);
 			setSongData(response.data);
 		};
 		getData();
@@ -93,7 +109,7 @@ const MyMusic = () => {
 						My Songs
 					</div>
 					{songData.map((item) => {
-						return <SingleSongCard info={item} />;
+						return <SingleSongCard info={item} playSound={playSound} />;
 					})}
 				</div>
 			</div>
