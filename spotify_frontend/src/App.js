@@ -7,7 +7,6 @@ import UploadSong from "./routes/UploadSong";
 import MyMusic from "./routes/MyMusic";
 import { BrowserRouter, Routes, Route, Navigate } from "react-router-dom";
 import { useCookies } from "react-cookie";
-import DeleteItem from "./routes/DeleteItem";
 import songContext from "./contexts/songContext";
 import { useState } from "react";
 
@@ -35,7 +34,6 @@ function App() {
 						<Route path="/login" element={<LoginComponent />} />
 						<Route path="/signup" element={<SignupComponent />} />
 						<Route path="*" element={<Navigate to="/login" />} />
-						<Route path="/test" element={<DeleteItem />} />
 					</Routes>
 				)}
 			</BrowserRouter>
