@@ -34,7 +34,7 @@ const playlistsCard = [
 ];
 const LoggedHomeComponent = () => {
 	return (
-		<LoggedInContainer>
+		<LoggedInContainer activeScreen="Home">
 			<PlaylistView titleText={"Spotify Playlists"} cardData={playlistsCard} />
 			<PlaylistView titleText={"Made For You"} cardData={playlistsCard} />
 			<PlaylistView titleText={"Sound Of India"} cardData={playlistsCard} />

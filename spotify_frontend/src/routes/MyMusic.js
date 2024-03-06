@@ -18,7 +18,7 @@ const MyMusic = () => {
 	}, []);
 
 	return (
-		<LoggedInContainer>
+		<LoggedInContainer activeScreen="MyMusic">
 			<div className="Content w-full h-9/10 bg-appblack rounded-br-2xl rounded-bl-2xl p-4 overflow-auto">
 				<div className="text-white pb-2 font-semibold text-2xl cursor-pointer hover:underline">
 					My Songs

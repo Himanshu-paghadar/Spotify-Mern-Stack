@@ -25,7 +25,7 @@ const UploadSong = () => {
 	};
 
 	return (
-		<LoggedInContainer>
+		<LoggedInContainer activeScreen="UploadSong">
 			<div className="pl-3">
 				<div className="my-4 font-semibold text-2xl text-white hover:underline">
 					Upload Your Music

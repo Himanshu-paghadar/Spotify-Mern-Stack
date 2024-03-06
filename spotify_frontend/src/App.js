@@ -13,13 +13,24 @@ import { useState } from "react";
 function App() {
 	// eslint-disable-next-line no-unused-vars
 	const [cookies, setCookies] = useCookies(["token"]);
-	const [currentSong, setCurrentSong] = useState();
+	const [currentSong, setCurrentSong] = useState(null);
+	const [soundPlayed, setSoundPlayed] = useState(null);
+	const [isPaused, setIsPaused] = useState(true);
 	return (
 		<div className="w-screen h-screen font-poppins">
 			<BrowserRouter>
 				{cookies.token ? (
 					//Logged In Routes...
-					<songContext.Provider value={{ currentSong, setCurrentSong }}>
+					<songContext.Provider
+						value={{
+							currentSong,
+							setCurrentSong,
+							soundPlayed,
+							setSoundPlayed,
+							isPaused,
+							setIsPaused,
+						}}
+					>
 						<Routes>
 							<Route path="/" element={<LoggedHomeComponent />} />
 							<Route path="/uploadSong" element={<UploadSong />} />
