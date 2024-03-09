@@ -6,6 +6,7 @@ import LoggedHomeComponent from "./routes/LoggedHome";
 import UploadSong from "./routes/UploadSong";
 import Search from "./routes/Search";
 import MyMusic from "./routes/MyMusic";
+import Library from "./routes/Library";
 import { BrowserRouter, Routes, Route, Navigate } from "react-router-dom";
 import { useCookies } from "react-cookie";
 import songContext from "./contexts/songContext";
@@ -37,6 +38,7 @@ function App() {
 							<Route path="/uploadSong" element={<UploadSong />} />
 							<Route path="/myMusic" element={<MyMusic />} />
 							<Route path="/search" element={<Search />} />
+							<Route path="/library" element={<Library />} />
 							<Route path="*" element={<Navigate to="/" />} />
 						</Routes>
 					</songContext.Provider>

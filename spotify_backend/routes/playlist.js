@@ -45,6 +45,18 @@ router.get(
 	}
 );
 
+//! Get all playlist made by me...!
+router.get(
+	"/get/me",
+	passport.authenticate("jwt", { session: false }),
+	async (req, res) => {
+		const artistId = req.user._id;
+
+		const playlist = await Playlist.find({ owner: artistId }).populate("owner");
+		return res.status(200).json({ data: playlist });
+	}
+);
+
 //! Get all playlist made by artist...!
 router.get(
 	"/get/artist/:artistId",
@@ -75,7 +87,7 @@ router.post(
 		if (!playlist) {
 			return res.status(400).json({ err: "Playlist does not exist" });
 		}
-		
+
 		//! check if artist is owner or collaborators of playlist...!
 		if (
 			!playlist.owner.equals(currentUser._id) &&

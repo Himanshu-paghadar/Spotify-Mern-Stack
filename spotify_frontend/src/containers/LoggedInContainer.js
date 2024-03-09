@@ -7,8 +7,10 @@ import { Link } from "react-router-dom";
 import { Howl, Howler } from "howler";
 import { useContext, useLayoutEffect, useRef, useState } from "react";
 import songContext from "../contexts/songContext";
+import CreatePlaylistModel from "../Models/CreatePlaylistModel";
 
 const LoggedInContainer = ({ children, activeScreen }) => {
+	const [createPlaylistModelOpen, setCreatePlaylistModelOpen] = useState(false);
 	const {
 		currentSong,
 		setCurrentSong,
@@ -67,6 +69,13 @@ const LoggedInContainer = ({ children, activeScreen }) => {
 
 	return (
 		<div className="w-full h-full">
+			{createPlaylistModelOpen && (
+				<CreatePlaylistModel
+					closeModel={() => {
+						setCreatePlaylistModelOpen(false);
+					}}
+				/>
+			)}
 			<div className={`${currentSong ? "h-5/6" : "h-full"} w-full flex`}>
 				{/* The Left Sidebar Panel */}
 				<div className="h-full sm:w-1/5 bg-black px-2 flex flex-col justify-between">
@@ -93,6 +102,7 @@ const LoggedInContainer = ({ children, activeScreen }) => {
 							<Icontext
 								iconName={"f7:music-albums"}
 								displayText={"Library"}
+								targetLink="/library"
 								active={activeScreen === "library"}
 							/>
 
@@ -107,6 +117,7 @@ const LoggedInContainer = ({ children, activeScreen }) => {
 							<Icontext
 								iconName={"material-symbols:add-box-outline"}
 								displayText={"Create Playlist"}
+								onClick={() => setCreatePlaylistModelOpen(true)}
 							/>
 							<Icontext
 								iconName={"fluent-emoji:heart-decoration"}
