@@ -17,7 +17,6 @@ const LoggedInContainer = ({ children, activeScreen }) => {
 		isPaused,
 		setIsPaused,
 	} = useContext(songContext);
-	console.log(currentSong);
 
 	const firstUpdate = useRef(true);
 
@@ -88,6 +87,7 @@ const LoggedInContainer = ({ children, activeScreen }) => {
 							<Icontext
 								iconName={"majesticons:search-line"}
 								displayText={"Search"}
+								targetLink="/search"
 								active={activeScreen === "search"}
 							/>
 							<Icontext
@@ -139,8 +139,10 @@ const LoggedInContainer = ({ children, activeScreen }) => {
 							<div className="w-2/5 flex justify-around h-full items-center">
 								{/* Log in & Sign up Button */}
 								<Link to={"/uploadSong"}>
-									<TextWithHover displayText={"Upload Songs"} active={activeScreen === "UploadSong"}/>
-								
+									<TextWithHover
+										displayText={"Upload Songs"}
+										active={activeScreen === "UploadSong"}
+									/>
 								</Link>
 								<div className="LogIn h-9 w-10 bg-white flex justify-center items-center transform transition-transform hover:scale-105  rounded-full font-semibold cursor-pointer">
 									HP

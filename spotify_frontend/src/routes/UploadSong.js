@@ -7,7 +7,7 @@ import LoggedInContainer from "../containers/LoggedInContainer";
 
 const UploadSong = () => {
 	const [name, setName] = useState("");
-	const [thumbnail, setThumnail] = useState("");
+	const [thumbnail, setThumbnail] = useState("");
 	const [playlistUrl, setPlaylistUrl] = useState("");
 	const [uploadedSongFileName, setUploadedSongFileName] = useState();
 	const navigate = useNavigate();
@@ -46,7 +46,7 @@ const UploadSong = () => {
 							placeholder="Thumbnail"
 							labelClassName="text-white"
 							value={thumbnail}
-							setValue={setThumnail}
+							setValue={setThumbnail}
 						/>
 					</div>
 				</div>

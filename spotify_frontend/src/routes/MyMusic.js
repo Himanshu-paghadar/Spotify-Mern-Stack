@@ -24,7 +24,13 @@ const MyMusic = () => {
 					My Songs
 				</div>
 				{songData.map((item) => {
-					return <SingleSongCard info={item} playSound={() => {}} />;
+					return (
+						<SingleSongCard
+							info={item}
+							key={JSON.stringify(item)}
+							playSound={() => {}}
+						/>
+					);
 				})}
 			</div>
 		</LoggedInContainer>
