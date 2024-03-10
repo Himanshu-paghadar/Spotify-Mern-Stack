@@ -37,7 +37,10 @@ router.get(
 	async (req, res) => {
 		const playlistId = req.params.playlistId;
 		//find playlist where _id = playlistId...!
-		const playlist = await Playlist.findOne({ _id: playlistId });
+		const playlist = await Playlist.findOne({ _id: playlistId }).populate({
+			path: "songs",
+			populate: { path: "artist" },
+		});
 		if (!playlist) {
 			return res.status(301).json({ err: "Invalid Id" });
 		}

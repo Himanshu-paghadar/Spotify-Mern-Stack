@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
 import LoggedInContainer from "../containers/LoggedInContainer";
 import { makeAuthenticatedGETRequest } from "../utils/serverHelpers";
+import { useNavigate } from "react-router-dom";
 
 const Library = () => {
 	const [myPlaylist, setMyPlaylist] = useState([]);
@@ -25,6 +26,7 @@ const Library = () => {
 							title={item.name}
 							description={""}
 							imgUrl={item.thumbnail}
+							playlistId={item._id}
 						/>
 					);
 				})}
@@ -34,9 +36,13 @@ const Library = () => {
 };
 
 //Single Playlist Card View with details...
-const Card = ({ title, description, imgUrl }) => {
+const Card = ({ title, description, imgUrl, playlistId }) => {
+	const navigate = useNavigate();
 	return (
-		<div className="bg-black bg-opacity-30 hover:bg-opacity-60 w-ful p-4 rounded-md cursor-pointer">
+		<div
+			className="bg-black bg-opacity-30 hover:bg-opacity-60 w-ful p-4 rounded-md cursor-pointer"
+			onClick={() => navigate("/playlist/" + playlistId)}
+		>
 			<div className="pb-2">
 				<img className="w-full rounded-md" src={imgUrl} alt="Lofi Songs" />
 			</div>

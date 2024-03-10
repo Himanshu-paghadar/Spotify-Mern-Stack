@@ -11,6 +11,7 @@ import { BrowserRouter, Routes, Route, Navigate } from "react-router-dom";
 import { useCookies } from "react-cookie";
 import songContext from "./contexts/songContext";
 import { useState } from "react";
+import SinglePlaylistView from "./routes/SinglePlaylistView";
 
 function App() {
 	// eslint-disable-next-line no-unused-vars
@@ -39,6 +40,10 @@ function App() {
 							<Route path="/myMusic" element={<MyMusic />} />
 							<Route path="/search" element={<Search />} />
 							<Route path="/library" element={<Library />} />
+							<Route
+								path="/playlist/:playlistId"
+								element={<SinglePlaylistView />}
+							/>
 							<Route path="*" element={<Navigate to="/" />} />
 						</Routes>
 					</songContext.Provider>
