@@ -8,9 +8,12 @@ import { Howl, Howler } from "howler";
 import { useContext, useLayoutEffect, useRef, useState } from "react";
 import songContext from "../contexts/songContext";
 import CreatePlaylistModel from "../Models/CreatePlaylistModel";
+import AddToPlaylistModel from "../Models/AddToPlaylistModel";
+import { makeAuthenticatedPOSTRequest } from "../utils/serverHelpers";
 
 const LoggedInContainer = ({ children, activeScreen }) => {
 	const [createPlaylistModelOpen, setCreatePlaylistModelOpen] = useState(false);
+	const [addToPlaylistModelOpen, setAddToPlaylistModelOpen] = useState(false);
 	const {
 		currentSong,
 		setCurrentSong,
@@ -34,6 +37,18 @@ const LoggedInContainer = ({ children, activeScreen }) => {
 		// eslint-disable-next-line react-hooks/exhaustive-deps
 	}, [currentSong && currentSong.track]);
 
+	const addSongToPlaylist = async (playlistId) => {
+		const songId = currentSong._id;
+		const payload = { playlistId, songId };
+		const response = await makeAuthenticatedPOSTRequest(
+			"/playlist/add/song",
+			payload
+		);
+		if (response) {
+			alert("Song Added to Playlist...!");
+			setAddToPlaylistModelOpen(false);
+		}
+	};
 	const playSound = () => {
 		if (!soundPlayed) {
 			return;
@@ -74,6 +89,14 @@ const LoggedInContainer = ({ children, activeScreen }) => {
 					closeModel={() => {
 						setCreatePlaylistModelOpen(false);
 					}}
+				/>
+			)}
+			{addToPlaylistModelOpen && (
+				<AddToPlaylistModel
+					closeModel={() => {
+						setAddToPlaylistModelOpen(false);
+					}}
+					addSongToPlaylist={addSongToPlaylist}
 				/>
 			)}
 			<div className={`${currentSong ? "h-5/6" : "h-full"} w-full flex`}>
@@ -214,7 +237,7 @@ const LoggedInContainer = ({ children, activeScreen }) => {
 							<Icon
 								icon="material-symbols:skip-next-rounded"
 								fontSize={30}
-								className="cursor-pointer  text-gray-400 hover:text-white4"
+								className="cursor-pointer  text-gray-400 hover:text-white"
 							/>
 							<Icon
 								icon="iconoir:repeat"
@@ -225,40 +248,23 @@ const LoggedInContainer = ({ children, activeScreen }) => {
 						{/* <div>Progress Bar</div> */}
 					</div>
 					{/* Volume Bar And buttons */}
-					<div className="w-1/4 flex justify-end space-x-4">
+					<div className="w-1/4 flex justify-end items-center space-x-4">
 						<Icon
-							icon="gg:play-button-r"
-							fontSize={20}
+							icon="ph:heart"
+							fontSize={22}
 							className="cursor-pointer text-gray-400 hover:text-white transform transition-transform hover:scale-105"
 						/>
 						<Icon
-							icon="tabler:microphone-2"
-							fontSize={20}
+							icon="ic:round-playlist-add"
+							fontSize={22}
 							className="cursor-pointer text-gray-400 hover:text-white transform transition-transform hover:scale-105"
-						/>
-						<Icon
-							icon="heroicons:queue-list"
-							fontSize={20}
-							className="cursor-pointer text-gray-400 hover:text-white transform transition-transform hover:scale-105"
-						/>
-						<Icon
-							icon="pixelarticons:audio-device"
-							fontSize={20}
-							className="cursor-pointer text-gray-400 hover:text-white transform transition-transform hover:scale-105"
-						/>
-						<Icon
-							icon="fluent:speaker-1-32-regular"
-							fontSize={20}
-							className="cursor-pointer text-gray-400 hover:text-white transform transition-transform hover:scale-105"
-						/>
-						<Icon
-							icon="akar-icons:miniplayer"
-							fontSize={20}
-							className="cursor-pointer text-gray-400 hover:text-white transform transition-transform hover:scale-105"
+							onClick={() => {
+								setAddToPlaylistModelOpen(true);
+							}}
 						/>
 						<Icon
 							icon="entypo:resize-full-screen"
-							fontSize={20}
+							fontSize={18}
 							className="cursor-pointer text-gray-400 hover:text-white transform transition-transform hover:scale-105"
 						/>
 					</div>

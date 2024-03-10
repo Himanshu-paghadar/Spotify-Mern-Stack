@@ -36,7 +36,7 @@ const Library = () => {
 //Single Playlist Card View with details...
 const Card = ({ title, description, imgUrl }) => {
 	return (
-		<div className="bg-black bg-opacity-30 hover:bg-opacity-60 w-ful p-4 rounded-md">
+		<div className="bg-black bg-opacity-30 hover:bg-opacity-60 w-ful p-4 rounded-md cursor-pointer">
 			<div className="pb-2">
 				<img className="w-full rounded-md" src={imgUrl} alt="Lofi Songs" />
 			</div>
