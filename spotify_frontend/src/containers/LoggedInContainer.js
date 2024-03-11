@@ -10,6 +10,7 @@ import songContext from "../contexts/songContext";
 import CreatePlaylistModel from "../Models/CreatePlaylistModel";
 import AddToPlaylistModel from "../Models/AddToPlaylistModel";
 import { makeAuthenticatedPOSTRequest } from "../utils/serverHelpers";
+import Cookies from "js-cookie";
 
 const LoggedInContainer = ({ children, activeScreen }) => {
 	const [createPlaylistModelOpen, setCreatePlaylistModelOpen] = useState(false);
@@ -80,6 +81,10 @@ const LoggedInContainer = ({ children, activeScreen }) => {
 			pauseSound();
 			setIsPaused(true);
 		}
+	};
+	const handleLogout = () => {
+		// Remove the token cookie
+		Cookies.remove("token");
 	};
 
 	return (
@@ -178,7 +183,13 @@ const LoggedInContainer = ({ children, activeScreen }) => {
 										active={activeScreen === "UploadSong"}
 									/>
 								</Link>
-								<div className="LogIn h-9 w-10 bg-white flex justify-center items-center transform transition-transform hover:scale-105  rounded-full font-semibold cursor-pointer">
+								<div
+									className="LogIn h-9 w-10 bg-white flex justify-center items-center transform transition-transform hover:scale-105  rounded-full font-semibold cursor-pointer"
+									onClick={(e) => {
+										e.preventDefault();
+										handleLogout();
+									}}
+								>
 									HP
 								</div>
 							</div>

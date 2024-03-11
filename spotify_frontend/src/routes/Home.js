@@ -2,6 +2,7 @@ import spotify_logo from "../assets/images/spotify_logo_white.svg";
 import Icontext from "../components/shared/IconText";
 import { Icon } from "@iconify/react";
 import TextWithHover from "../components/shared/TextWithHover";
+import { Link } from "react-router-dom";
 
 const playlistsCard = [
 	{
@@ -52,13 +53,15 @@ const HomeComponent = () => {
 							displayText={"Home"}
 							active
 						/>
-						<Icontext
-							iconName={"majesticons:search-line"}
-							displayText={"Search"}
-						/>
+						<Link to="./Search.js">
+							<Icontext
+								iconName={"majesticons:search-line"}
+								displayText={"Search"}
+							/>
+						</Link>
 						<Icontext iconName={"f7:music-albums"} displayText={"Library"} />
 					</div>
-					<div className="my-2 bg-appblack rounded-2xl">
+					{/* <div className="my-2 bg-appblack rounded-2xl">
 						<Icontext
 							iconName={"material-symbols:add-box-outline"}
 							displayText={"Create Playlist"}
@@ -67,7 +70,7 @@ const HomeComponent = () => {
 							iconName={"fluent-emoji:heart-decoration"}
 							displayText={"Liked Songs"}
 						/>
-					</div>
+					</div> */}
 				</div>
 				<div>
 					<div className="ExtraDetails text-xs font-medium  text-gray-600 mb-6 flex flex-wrap justify-between cursor-pointer px-2">
@@ -98,10 +101,14 @@ const HomeComponent = () => {
 						</div>
 						<div className="w-2/5 flex justify-around h-full items-center">
 							{/* Log in & Sign up Button */}
-							<TextWithHover displayText={"Sign up"} />
-							<div className="LogIn h-2/3 px-7 py-5 bg-white flex justify-center items-center transform transition-transform hover:scale-105  rounded-full font-semibold cursor-pointer">
-								Log in
-							</div>
+							<Link to="./signup">
+								<TextWithHover displayText={"Sign up"} />
+							</Link>
+							<Link to="./login">
+								<div className="LogIn h-2/3 px-6 py-2 bg-white flex justify-center items-center transform transition-transform hover:scale-105  rounded-full font-semibold cursor-pointer">
+									Log in
+								</div>
+							</Link>
 						</div>
 					</div>
 				</div>
